@@ -36,7 +36,7 @@ if (johnAvg === mikeAvg || maryAvg === johnAvg || mikeAvg === maryAvg) {
     } else {
        if (johnAvg > maryAvg) {
            console.log('1st place Mike; 2nd place John, 3rd place Mary'); 
-       } else if (maryAvg > johnAvg) {
+       } else if (maryAvg > mikeAvg) {
            console.log('1st place Mary; 2nd place Mike, 3rd place John'); 
        } else {
            console.log('1st place Mike; 2nd place Mary; 3rd place John');
