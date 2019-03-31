@@ -1,6 +1,6 @@
 var johnAvg = (153 + 95 + 29) / 3;
-var mikeAvg = (11 + 112 + 48) / 3;
-var maryAvg = (161 + 15 + 38) / 3;
+var mikeAvg = (153 + 95 + 29) / 3;
+var maryAvg = (261 + 15 + 38) / 3;
 
 if (johnAvg === mikeAvg || maryAvg === johnAvg || mikeAvg === maryAvg) {
     if (johnAvg === mikeAvg && mikeAvg === maryAvg) {
@@ -34,12 +34,12 @@ if (johnAvg === mikeAvg || maryAvg === johnAvg || mikeAvg === maryAvg) {
            console.log('1st place John; 2nd place Mary; 3rd place Mike');
        }
     } else {
-       if (maryAvg > johnAvg) {
-           console.log('1st place Mike; 2nd place Mary, 3rd place John'); 
-       } else if (maryAvg < mikeAvg) {
-           console.log('1st place Mike; 2nd place John, 3rd place Mary'); 
+       if (johnAvg > maryAvg) {
+           console.log('1st place Mike; 2nd place Mary, 3rd place Mary'); 
+       } else if (maryAvg > mikeAvg) {
+           console.log('1st place Mary; 2nd place John, 3rd place John'); 
        } else {
-           console.log('1st place Mary; 2nd place Mike; 3rd place John');
+           console.log('1st place Mike; 2nd place Mary; 3rd place John');
        }
     }
 }
