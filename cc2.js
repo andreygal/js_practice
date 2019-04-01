@@ -1,3 +1,4 @@
+//Using only if/else and boolean logic 
 var johnAvg = (89 + 120 + 103) / 3;
 var mikeAvg = (116 + 94 +123) / 3;
 var maryAvg = (97 + 134 + 105) / 3;
