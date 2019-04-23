@@ -43,17 +43,39 @@ for (let [name, buildYear] of landmarksArr) {
 		landmarksObjArr.push(new Street(name, buildYear, Math.sqrt(randNum), streetSize[randInx]));
 	} else {
 		console.log('creating a park'); 
-		landmarksObjArr.push(new Park(name, buildYear, randNum * 100, Math.sqrt(Math.abs((Math.sin(randInx) + 1) * randNum))));
+		landmarksObjArr.push(new Park(name, buildYear, randNum * 5, Math.sqrt(Math.abs((Math.sin(randInx) + 1) * randNum))));
 	}
 };
 
 console.log("Park Report" + '\n' + '-------------');
+const parks = landmarksObjArr.slice(4, 7); 
+
 for (let park of landmarksObjArr) {
 	if (park instanceof Park) {
 		console.log(`The tree density in ${park.name} park is ${park.getTreeDensity()} trees per sq km`);
 	}
 }
 
-let ages = landmarksObjArr.slice(4,7).map((e) => new Date().getFullYear() - e.buildYear); 
+let ages = parks.map((e) => new Date().getFullYear() - e.buildYear); 
 const avgAge = ages.reduce((park, nextPark) => park + nextPark) / ages.length;
 console.log(`The average age of a park is ${avgAge} years`);
+
+parks.forEach((park) => {
+    if (park.numOfTrees > 1000) 
+        console.log(`${park.name} has more than a thousand trees!`); 
+});  
+
+console.log('Street Report \n ------------'); 
+const streets = landmarksObjArr.slice(0, 4); 
+
+let totalLength = (streets.map((s) => s.length)).reduce((street, nextStreet) => street + nextStreet); 
+let avgLength = totalLength / streets.length; 
+console.log(`Total length of town streets is ${totalLength} km with an average street length of ${avgLength} km`);
+
+streets.forEach((street) => console.log(
+street.name + ' ' + street.length + ' km \n'));
+
+
+
+
+
